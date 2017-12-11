@@ -21,14 +21,14 @@ public class TestSavingAccount2 {
 		int amount = obj.getBalance();
 		assertEquals(10, amount);
 	}	 
-	/*@Test
+	@Test
 	public void VerifySavingAccountNegativeBalanceDeposit()
     {
 		SavingAccount obj = new SavingAccount(-100);
         obj.deposit(2000);
         int amount = obj.getBalance();
         assertEquals(0, amount);
-    }*/
+    }
 	@Test
 	public void TestSavingAccountWithdraw()
     {
