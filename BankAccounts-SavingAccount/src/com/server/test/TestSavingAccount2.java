@@ -19,7 +19,7 @@ public class TestSavingAccount2 {
 		obj.deposit(-1000);
 		 
 		int amount = obj.getBalance();
-		assertEquals(100, amount);
+		assertEquals(10, amount);
 	}	 
 	@Test
 	public void VerifySavingAccountNegativeBalanceDeposit()
