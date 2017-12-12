@@ -6,7 +6,7 @@ package com.server.test;
 //New assert with static methods
 import static org.junit.Assert.*;
 
-//Multiple push commits to multiple GIT Repos ?
+//Multiple 
 
 import org.junit.Test;
 
@@ -29,7 +29,7 @@ public class TestSavingAccount2 {
 		SavingAccount obj = new SavingAccount(-100);
         obj.deposit(2000);
         int amount = obj.getBalance();
-        assertEquals(2340, amount);
+        assertEquals(0, amount);
     }
 	@Test
 	public void TestSavingAccountWithdraw()
