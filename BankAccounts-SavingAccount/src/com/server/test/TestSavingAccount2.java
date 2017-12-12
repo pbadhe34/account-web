@@ -29,7 +29,7 @@ public class TestSavingAccount2 {
 		SavingAccount obj = new SavingAccount(-100);
         obj.deposit(2000);
         int amount = obj.getBalance();
-        assertEquals(0, amount);
+        assertEquals(1900, amount);
     }
 	@Test
 	public void TestSavingAccountWithdraw()
