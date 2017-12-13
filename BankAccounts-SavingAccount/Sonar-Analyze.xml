@@ -8,11 +8,11 @@
 	
 	<!-- Define the Sonar properties -->
 	<property name="sonar.projectKey" value="org.sonarqube:java-app" />
-	<property name="sonar.projectName" value="Jaav Test Project" />
+	<property name="sonar.projectName" value="Java Test App" />
 	<property name="sonar.projectVersion" value="1.0" />
 	<property name="sonar.language" value="java" />
-	<property name="sonar.sources" value="src/com/server/bank/*.java" />
-	<property name="sonar.exclusions" value="src/com/server/test/*.java"/>
+	<property name="sonar.sources" value="src/com/server/bank/" />
+	<property name="sonar.exclusions" value="src/com/server/test/"/>
 	<property name="sonar.binaries" value="${build.dir}" />
 	<property name="sonar.sourceEncoding" value="UTF-8" />
      <property name="sonar.java.binaries" value="${build.dir}" />     
