@@ -7,16 +7,20 @@
 	<property name="classes.dir" value="${build.dir}" />
 	
 	<!-- Define the Sonar properties -->
-	<property name="sonar.projectKey" value="org.sonarqube:java-ant" />
-	<property name="sonar.projectName" value="Sonar Code Analyzer" />
+	<property name="sonar.projectKey" value="org.sonarqube:java-app" />
+	<property name="sonar.projectName" value="Jaav Test Project" />
 	<property name="sonar.projectVersion" value="1.0" />
 	<property name="sonar.language" value="java" />
-	<property name="sonar.sources" value="src" />
-	<property name="sonar.exclusions" value="src/test/**"/>
+	<property name="sonar.sources" value="src/com/server/bank/*.java" />
+	<property name="sonar.exclusions" value="src/com/server/test/*.java"/>
 	<property name="sonar.binaries" value="${build.dir}" />
 	<property name="sonar.sourceEncoding" value="UTF-8" />
-     <property name="sonar.java.binaries" value="${build.dir}" />
+     <property name="sonar.java.binaries" value="${build.dir}" />     
+     
+     
+     <property name="sonar.java.libraries" value="lib/*.jar" />
 
+     <property name="sonar.host.url" value="http://localhost:9000" />
 	
 	<!-- Customize your basic Sonar configuration below: sonar.jdbc.url, sonar.jdbc.username, etc. properties 
    Default is H2 DB
@@ -32,19 +36,24 @@
 		<delete dir="${build.dir}" />
 	</target>
 
-	<target name="init">
+	<target name="init" depends="clean">
 		<mkdir dir="${build.dir}" />		 
 	</target>
 
 	<target name="compile" depends="init">
-		<javac srcdir="${src.dir}" destdir="${classes.dir}" fork="true" debug="true" includeAntRuntime="false" />
+		<javac srcdir="${src.dir}/com/server/bank" destdir="${classes.dir}" fork="true" debug="true" includeAntRuntime="false">
+		   <classpath>			 
+			 <pathelement location="${basedir}/lib/slf4j-api-1.7.5.jar" />
+			</classpath>
+			</javac>
 	</target>
 
 	<!-- ========= Define and run Sonar Task ========= -->
-	<target name="sonar-run">
+	<target name="sonar-run" depends="">
 		<taskdef uri="antlib:org.sonar.ant" resource="org/sonar/ant/antlib.xml">
 			<!-- Update the following line, or put the "sonar-ant-task-*.jar" file in your "$HOME/.ant/lib" folder -->
 		<classpath path="lib/sonarqube-ant-task-2.4.jar" />
+		<!-- classpath path="D:/sonarqube-6.5/sonarqube-6.5/lib/scanner/sonar-scanner-engine-shaded-6.5.jar" /-->
 		</taskdef>
 		
 		<!-- Execute Sonar -->

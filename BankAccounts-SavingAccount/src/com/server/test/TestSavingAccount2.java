@@ -14,6 +14,12 @@ import com.server.bank.SavingAccount;
 
 public class TestSavingAccount2 {
 	
+	public TestSavingAccount2()
+	{
+		System.out.println("TestSavingAccount2.constructor is here..");
+		// obj = new SavingAccount();
+	}
+	
 	@Test(expected=com.server.bank.NegativeDepositException.class)
 	public void testAccountNegativeDeposit()
 	{

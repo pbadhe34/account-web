@@ -9,7 +9,19 @@ public class SavingAccount {
 			throw new NegativeDepositException();
 		balance+= amount;	
 		 
+	} 
+	
+	private void update()
+	{
+		System.out.println("Account update private");
 	}
+	
+	/*public int  getClients()
+	{
+		System.out.println("Account getClients ");
+		return 4;
+	}*/
+	
 	
    public void deposit(Currency currency) {	
 	    

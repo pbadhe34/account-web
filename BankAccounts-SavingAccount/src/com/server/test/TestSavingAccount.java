@@ -8,6 +8,7 @@ import static org.junit.Assert.*;
 
 import org.junit.After;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import com.server.bank.Currency;
@@ -15,11 +16,14 @@ import com.server.bank.Dollar;
 import com.server.bank.SavingAccount;
 
  
+ 
 
 public class TestSavingAccount 
 {
     private SavingAccount obj = new  SavingAccount();	
 	 
+    private double bal;
+    
 	public TestSavingAccount()
 	{
 		System.out.println("TestSavingAccount.constructor is here..");
@@ -73,10 +77,12 @@ public class TestSavingAccount
         int amount = obj.getBalance();
         assertEquals(1500, amount);//verify the current  balance
      }
+	
 	@Test
     public void testSavingAccountDollarTransfer()
     {
-        obj = new SavingAccount();    
+        System.out.println("Running the Dollar test");
+		obj = new SavingAccount();    
         obj.deposit(1000);
         Currency usCurrency = new Dollar(100);
         obj.deposit(usCurrency);//Compiler Error Fix it
@@ -122,13 +128,13 @@ public class TestSavingAccount
     @Before
     public void setUp() throws Exception {
 		 
-		System.out.println("TestSavingAccount.setUp()");
+		//System.out.println("TestSavingAccount.setUp()");
 		obj =  new SavingAccount();
 	}
 	 @After
 	public void tearDown() throws Exception {
 		 
-		System.out.println("TestSavingAccount.tearDown()");
+		//System.out.println("TestSavingAccount.tearDown()");
 		obj = null;
 	}
 
